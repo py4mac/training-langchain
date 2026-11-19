@@ -1,0 +1,16 @@
+[project]
+name = "02-rag-pdf"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dotenv>=0.9.9",
+    "langchain>=1.5.2",
+    "langchain-docling>=3.0.0",
+    "langchain-openai>=1.8.3",
+    "pymupdf>=2.1",
+    "pypdf>=7.1.1",
+    "rapidocr>=3.10.0",
+    "rapidocr-onnxruntime>=1.4.4",
+]
