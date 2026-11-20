@@ -3,8 +3,9 @@ FROM ghcr.io/astral-sh/uv:python3.13-bookworm-slim
 WORKDIR /app
 
 # Dépendances d'abord (cache Docker)
-COPY pyproject.toml uv.lock ./
-RUN uv sync --frozen --no-dev
+# Sans --frozen : si uv.lock ne correspond pas à pyproject.toml, uv le régénère.
+COPY pyproject.toml uv.lock* ./
+RUN uv sync --no-dev
 
 # Code de l'agent
 COPY agent.py langgraph.json ./
